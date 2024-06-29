@@ -1,0 +1,9 @@
+.idea
+logs/
+out/
+target/
+
+**/application-local.yaml
+**/application-test.yaml
+**/application-prod.yaml
+

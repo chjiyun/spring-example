@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: spring3
+  profiles:
+    active: @spring.profiles.active@
+#  mvc:
+
+  undertow:
+    max-http-post-size: 20MB
+
+springdoc:
+  api-docs:
+    enabled: ${swagger.enable}
+    path: /v3/api-docs
+  group-configs:
+    - group: 测试接口
+      paths-to-match:
+        - '/api/**'
+      packages-to-scan:
+        - com.spring3.client.controller
+  disable-i18n: true
+
+swagger:
+  enable: true
+  title: 系统API文档
+  description: spring3测试系统
+  service-url: http://127.0.0.1:8001/
+  version: v1.0
+
+# 应用配置
+app:
+  info:
+    version: v1.0
+    base-package: com.spring3
+
+mybatis-plus:
+  mapper-locations: classpath:com/spring3/**/mapper/**/*Mapper.xml
+
